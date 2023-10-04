@@ -12,7 +12,7 @@ const LeftSideContent = () => {
     }, [])
 
     return (
-        <div>
+        <div className="p-4">
             <h2 className="font-bold">All Categories</h2>
             <div className="p-4 space-y-4">
                 {
