@@ -1,12 +1,20 @@
 import { FaRegBookmark, FaShareAlt, FaRegEye } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 
 const NewsHome = ({ news }) => {
 
-    const { author, thumbnail_url, details, title, total_view, rating } = news
+    const { _id, author, thumbnail_url, details, title, total_view, rating } = news
+
+    const navigate = useNavigate()
+
+    const handleNewsDetails = () => {
+        navigate(`/details/${_id}`)
+    }
+
 
     return (
-        <div>
+        <div onClick={handleNewsDetails}>
             <div className=" flex justify-between items-center px-5 py-2 bg-gray-100 rounded mt-5">
                 <div className="flex items-center gap-3">
                     <img className="w-14 rounded-full" src={author.img} alt="" />
