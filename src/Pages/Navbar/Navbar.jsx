@@ -32,19 +32,20 @@ const Navbar = () => {
             </div>
             <div className="navbar-end">
 
-                <Link>
-                    <div className="flex items-center gap-2">
-                        <label >
-                            <div className="w-10 rounded-full">
-                                <img src={userImg} />
-                            </div>
-                        </label>
 
+                <div className="flex items-center gap-2">
+                    <label >
+                        <div className="w-10 rounded-full">
+                            <img src={userImg} />
+                        </div>
+                    </label>
+                    <Link to="/login">
                         <button className="bg-rose-600 text-white px-4 py-1 rounded font-semibold">Login</button>
-                    </div>
-                </Link>
+                    </Link>
+                </div>
+
             </div>
-        </div>
+        </div >
     );
 };
 
