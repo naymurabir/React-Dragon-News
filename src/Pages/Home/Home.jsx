@@ -12,7 +12,7 @@ const Home = () => {
             <Navbar></Navbar>
 
 
-            <div className="grid grid-cols-1 lg:grid-cols-4 gap-5 items-center my-10">
+            <div className="grid grid-cols-1 lg:grid-cols-4 gap-5  my-10">
                 <div className="border">
                     <LeftSideContent></LeftSideContent>
                 </div>
