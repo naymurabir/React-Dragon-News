@@ -1,7 +1,11 @@
 import { Link } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const Login = () => {
+
+    const { loginUser } = useContext(AuthContext)
 
 
     const handleLogin = e => {
@@ -10,6 +14,16 @@ const Login = () => {
         const email = form.get('email')
         const password = form.get('password')
         console.log(email, password);
+
+
+        loginUser(email, password)
+            .then(result => {
+                const user = result.user
+                console.log("User has been logged in.", user);
+            })
+            .catch(error => {
+                console.log("Error", error.message);
+            })
     }
 
     return (
