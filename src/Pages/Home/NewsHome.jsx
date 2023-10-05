@@ -1,5 +1,5 @@
 import { FaRegBookmark, FaShareAlt, FaRegEye } from 'react-icons/fa';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 const NewsHome = ({ news }) => {
@@ -14,7 +14,7 @@ const NewsHome = ({ news }) => {
 
 
     return (
-        <div onClick={handleNewsDetails}>
+        <div >
             <div className=" flex justify-between items-center px-5 py-2 bg-gray-100 rounded mt-5">
                 <div className="flex items-center gap-3">
                     <img className="w-14 rounded-full" src={author.img} alt="" />
@@ -33,7 +33,14 @@ const NewsHome = ({ news }) => {
             <div className='mt-5 px-5 space-y-3'>
                 <h2 className=' text-sm font-bold'>{title}</h2>
                 <img className='w-full h-[250px]' src={thumbnail_url} alt="" />
-                <p className='text-sm mt-3'>{details}</p>
+
+                {
+                    details.length > 200 ? <p onClick={handleNewsDetails}>{details.slice(0, 200)} <Link className='text-blue-600 font-bold'> Read More...</Link>  </p>
+                        :
+                        <p>{details}</p>
+
+
+                }
 
                 <div className='flex justify-between items-center bg-gray-100 px-4 py-1 rounded'>
                     <div>

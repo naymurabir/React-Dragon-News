@@ -1,4 +1,4 @@
-import { useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 import Header from "../Header/Header";
 import Navbar from "../Navbar/Navbar";
 import RightSideContent from "../SharedPages/RightSideContent";
@@ -9,12 +9,14 @@ const NewsDetails = () => {
     const { _id } = useParams()
     const idInt = parseInt(_id)
 
-    console.log(idInt);
-
     const newsDetail = newsDetails.find(newsDetail => newsDetail._id === idInt)
 
     const { image_url, title, details } = newsDetail
 
+    const navigate = useNavigate()
+    const handleGoHome = () => {
+        navigate('/')
+    }
 
     return (
         <div>
@@ -29,7 +31,7 @@ const NewsDetails = () => {
                     <h3 className="text-base font-bold mt-3">{title}</h3>
                     <p className="text-sm mt-4">{details}</p>
 
-                    <button className="text-white bg-rose-600 px-4 py-2 rounded mt-4">All news in this Category.</button>
+                    <button onClick={handleGoHome} className="text-white bg-rose-600 px-4 py-2 rounded mt-4">All news in this Category.</button>
                 </div>
                 <div>
                     <RightSideContent></RightSideContent>

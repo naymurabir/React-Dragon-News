@@ -6,6 +6,7 @@ import RightSideContent from "../SharedPages/RightSideContent";
 import BreakingNews from "./BreakingNews";
 import NewsHome from "./NewsHome";
 
+
 const Home = () => {
 
     const [allNews, setAllNews] = useState([])
@@ -25,11 +26,11 @@ const Home = () => {
 
 
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-5  my-10">
-                <div className="border">
+                <div>
                     <LeftSideContent></LeftSideContent>
                 </div>
 
-                <div className="col-span-2 border">
+                <div className="col-span-2">
                     <div className="p-4">
                         <h2 className="text-xl font-semibold">Dragon News Home</h2>
 
@@ -39,7 +40,7 @@ const Home = () => {
                     </div>
                 </div>
 
-                <div className="border">
+                <div >
                     <RightSideContent></RightSideContent>
                 </div>
             </div>

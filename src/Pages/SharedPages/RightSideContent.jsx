@@ -3,18 +3,25 @@ import qZone1 from '../../assets/qZone1.png'
 import qZone2 from '../../assets/qZone2.png'
 import qZone3 from '../../assets/qZone3.png'
 import backgroundImg1 from '../../assets/bg1.png'
+import { useContext } from 'react';
+import { AuthContext } from '../../Providers/AuthProvider';
 
 
 
 const RightSideContent = () => {
+
+    const { googleLogin } = useContext(AuthContext)
+
+    const handleGoogleLogin = () => {
+        googleLogin()
+    }
+
     return (
-
         <div>
-
             <div className='space-y-2 p-4 mb-5'>
                 <h2 className='text-md font-semibold'>Login With</h2>
 
-                <button className='btn btn-outline w-full btn-sm'>
+                <button onClick={handleGoogleLogin} className='btn btn-outline w-full btn-sm'>
                     <FaGoogle className='text-blue-700 text-xl'></FaGoogle>
                     Google
                 </button>
