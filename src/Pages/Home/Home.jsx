@@ -20,6 +20,7 @@ const Home = () => {
 
     return (
         <div>
+
             <Header></Header>
             <BreakingNews></BreakingNews>
             <Navbar></Navbar>
